@@ -19,6 +19,8 @@
 | 4月11日 | 通过邮件的方式将测试集和结果提交链接发送给报名队伍，提交结果榜单详见各赛道Github主页|
 | 5月15日 | 测试集结果提交截止 |
 
+往届比赛信息可参考[CCL2023 Task8 中小学作文流畅性评估](https://github.com/cubenlp/2023CCL_CEFE)
+
 # 1 组织者与联系人
 
 &emsp;&emsp;任务组织者：庄薪霖（华东师范大学，计算机科学与技术学院），沈新舒（华东师范大学，计算机科学与技术学院），伍洪意（华东师范大学，计算机科学与技术学院），柏晓鹏（华东师范大学，中国语言文学系），兰曼（华东师范大学， 计算机科学与技术学院），吴苑斌（华东师范大学， 计算机科学与技术学院），毛绍光（微软亚洲研究院），夏炎（微软亚洲研究院）
@@ -148,14 +150,110 @@
 <p align="center">表3 中小学作文病句改写赛道数据分布</p>
 
 
-在计算最终成绩时将综合考虑三个track的分数，对于没有参加某个track的队伍，将按照该track的baseline分数进行加权，从而计算总分数。
+## 3.3 赛道3：中小学作文流畅性评级
+
+- **数据样例**
+
+```json
+{
+    "id": "848",
+    "title": "小陈二三事",
+    "text": "她的个子不高，眼睛也不大，但是炯炯有神，那一单一双的眼皮儿显得她非常活泼，小麦色的皮肤显得她朝气蓬勃。没错，这就是我的朋友——小陈。\n她是我们班的语文课代表。那天，她抱着语文作业从走廊快步走来，只听“啪”的一声，她将作业本放在了小帅同学的桌子上，眼神中充满着“杀气”。“小帅，你交天怎么又不交作业......”这就是她给我的第一印象，并不是很好。\n换座位之后，我坐在了她的后面。“Hello！”她热情地跟我打了打招乎，跟我畅聊了起来。\n我们聊着聊着，忽然激动地站了起来。\n“你也喜欢画画啊！”“嘿嘿，是的。”我们发现了共同的爱好，聊地更欢了。经过了几天的相处，我们渐渐变成了无话不谈的好朋友，她不再是那个“凶巴巴”的女孩了，她成绩优异，性格开朗，阳光自信，是我学习的榜样和动力。\n下课了，我们经常在一起玩耍、聊天。她很爱笑，跟她在一起，让我的学习生活增添了不少乐趣。她很热心，记得那次体育课上，我没有带跳绳，很多同学都不愿意借给我，我当时百般焦急，正当我不知道怎么办时，她来了，亲切的拍了拍我的臂膀：“怎么啦，愁眉苦脸的。”“我没带跳绳。”“那你怎么没问我借呢，跳绳给你。”她用调皮的语气说道。我连忙道谢，她并没有向其它人一样坐视不管，她很关心我，平时，遇到我不会做的题目，她会一遍遍耐心的教我，上课时，老师点我回答问题，她也总会默默提醒我，前两天我感冒了，也是在她的关心下才渐渐好起来......这就是我的朋友——小陈，她活泼开朗，阳光自信，乐于助人，是我学习的动力和榜样",
+    "essay_score_level": "优秀"
+}
+```
+<p align="center">图3 中小学作文流畅性评级赛道数据样例1</p>
+
+图3为赛道3的训练数据样例，具体包括作文ID、作文题目、作文文本、作文等级。
+
+- **评测数据集**
+
+&emsp;&emsp;该赛道的数据来源于中学生作文数据，各项数据分布如表4所示。
+
+<div align="center">
+
+| 数据集（Data Set） | 作文数（essays） |
+|:---:|:---:|
+| 训练集（Train Set） | 约100篇 |
+| 验证集（Dev Set） | 10篇 |
+| 测试集（Test Set） | 约2000篇 |
+
+</div>
+
+<p align="center">表4 中小学作文字符级错误识别与纠正赛道数据分布</p>
 
 
+注：在计算最终成绩时将综合考虑三个track的分数，对于没有参加某个track的队伍，将按照该track的baseline分数进行加权，从而计算总分数。基准模型的效果将与测试集一同公布。
 
 
+# 4 评价标准
+
+## 4.1 赛道1：中小学作文病句类型识别
+
+总分由两部分组成：粗粒度病句识别分数和细粒度病句识别分数，具体计算方式如下：
+
+![track1 equation](https://github.com/cubenlp/2023CCL_CEFE/blob/main/imgs/track1_equation.png)
 
 
+&emsp;&emsp;本任务采用精确率（Precision, P）、召回率（Recall, R）、F1值（Micro F1）来评估粗、细粒度病句类型的识别效果，计算公式如下：
+
+&emsp;&emsp;&emsp;&emsp;病句类型识别精确率=识别病句类型和标注相同的数量/识别出的该病句类型的总数量；
+
+&emsp;&emsp;&emsp;&emsp;病句类型识别召回率=识别病句类型和标注相同的数量/标注出的该病句类型的总数量；
+
+&emsp;&emsp;&emsp;&emsp;病句类型F1值=(2\*病句类型识别精确率\*病句类型识别召回率)/(病句类型识别精确率+病句类型识别召回率)。
+
+## 4.2 赛道2：中小学作文病句改写
+
+&emsp;&emsp;我们采用EM(Exact Match)、Bert PPL、与input的编辑距离、BLEU-4、BERTScore以及$F_{0.5}$作为评估指标，$F_{0.5}$具体计算方法参考[MuCGEC](https://github.com/HillZhang1999/MuCGEC/tree/main/scorers/ChERRANT?spm=5176.12282016.0.0.7a106b1dPaf6TP)，最终实际排名将综合考虑上述所有指标得到AvgScore，在此基础之上对排名前5的队伍进行人工辅助评测，得到最终排名。
+AvgScore计算方式如下：
+    $$Avg Score = (EM + BLEU + F_{0.5} + BERTScore)/4 - Levenshtein - PPL_{BERT} $$
+
+## 4.3 赛道3：中小学作文流畅性评级
+
+&emsp;&emsp;采用准确率（Accuracy，Acc）、精确率（Precision, P）、召回率（Recall, R）、F1值（Macro F1）、Quadratic weighted Kappa（QWK）来评估中小学作文流畅性评级的分类效果：
+    $$S = 0.5 * F_1 + 0.2 * QWK + 0.3 * Acc $$
+# 5 评测赛程
+
+## 5.1 赛程
+
+&emsp;&emsp;2024年4月10日：报名截止；
+
+&emsp;&emsp;2024年4月11日：通过邮件的方式将测试集和结果提交链接发送给报名队伍，提交结果榜单详见各赛道Github主页；
+
+&emsp;&emsp;2024年5月15日：测试集结果提交截止；
+
+&emsp;&emsp;2024年5月31日：公布参赛队伍的成绩和排名（并非最终排名，还需参考技术报告）；
+
+&emsp;&emsp;2024年6月：提交技术报告；
+
+&emsp;&emsp;2024年7月：评测论文审稿&评测论文录用通知&评测论文Camera-Ready版提交；
+
+&emsp;&emsp;2024年8月：CCL 2024评测研讨会；
 
 
+## 5.2 报告格式
+
+- 报告可由中文或英文撰写。
+- 报告统一使用CCL 2024 的[论文模版](http://cips-cl.org/static/CCL2024/downloads/ccl2024_template.zip)。
+- 报告应至少包含以下四个部分：模型介绍、评测结果、结果分析与讨论和参考文献。
+
+# 6 奖项设置
+
+- 本次评测将设置一、二、三等奖，由中国中文信息学会为本次评测获奖队伍提供荣誉证书
+
+- 提供若干奖金证书奖励
+
+# 7 参考文献
+
+[1]Lawrence M Rudner, Veronica Garcia, and Catherine Welch. 2006. An evaluation of intellimetricessay scoring system. The Journal of Technology, Learning and Assessment, 4(4).
+
+[2]吴恩慈, 田俊华. 基于语言学特征的小学生作文流畅性自动评价[J]. 教育测量与评价, 2020 (3): 41-50.
+
+[3] Yang Y, Xia L, Zhao Q. An automated grader for Chinese essay combining shallow and deep semantic attributes[J]. IEEE Access, 2019, 7: 176306-176316.
+
+[4] Gong J, Hu X, Song W, et al. IFlyEA: A Chinese Essay Assessment System with Automated Rating, Review Generation, and Recommendation[C]//Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations. 2021: 240-248.
+
+[5] Farjana Sultana Mim, Naoya Inoue, Paul Reisert, Hiroki Ouchi, Kentaro Inui: Corruption Is Not All Bad: Incorporating Discourse Structure Into Pre-Training via Corruption for Essay Scoring. IEEE ACM Trans. Audio Speech Lang. Process. 29: 2202-2215 (2021)
 
 
