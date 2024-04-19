@@ -234,8 +234,8 @@ Track3：
 
 总分由两部分组成：粗粒度病句识别分数和细粒度病句识别分数，具体计算方式如下：
 
-![track1 equation](https://github.com/cubenlp/2023CCL_CEFE/blob/main/imgs/track1_equation.png)
 
+$$ Score_{track1} = 0.5 * F_1^{Coarse-grained} + 0.5 * F_1^{Fine-grained}$$
 
 &emsp;&emsp;本任务采用精确率（Precision, P）、召回率（Recall, R）、F1值（Micro F1）来评估粗、细粒度病句类型的识别效果，计算公式如下：
 
@@ -249,12 +249,12 @@ Track3：
 
 &emsp;&emsp;我们采用EM(Exact Match)、Bert PPL、与input的编辑距离、BLEU-4、BERTScore以及$F_{0.5}$作为评估指标，$F_{0.5}$具体计算方法参考[MuCGEC](https://github.com/HillZhang1999/MuCGEC/tree/main/scorers/ChERRANT?spm=5176.12282016.0.0.7a106b1dPaf6TP)，最终实际排名将综合考虑上述所有指标得到AvgScore，在此基础之上对排名前5的队伍进行人工辅助评测，得到最终排名。
 AvgScore计算方式如下：
-    $$Avg Score = (EM + BLEU + F_{0.5} + BERTScore)/4 - Levenshtein - PPL_{BERT} $$
+    $$Score_{track2} = (EM + BLEU + F_{0.5} + BERTScore)/4 - Levenshtein - PPL_{BERT} $$
 
 ## 4.3 赛道3：中小学作文流畅性评级
 
 &emsp;&emsp;采用准确率（Accuracy，Acc）、精确率（Precision, P）、召回率（Recall, R）、F1值（Macro F1）、Quadratic weighted Kappa（QWK）来评估中小学作文流畅性评级的分类效果：
-    $$S = 0.5 * F_1 + 0.2 * QWK + 0.3 * Acc $$
+    $$Score_{track3} = 0.5 * F_1 + 0.2 * QWK + 0.3 * Acc $$
 # 5 评测赛程
 
 ## 5.1 赛程
