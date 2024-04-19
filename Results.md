@@ -4,7 +4,7 @@
 
 | TeamName                       | TeamEmail            | Micro-F1 | Macro-F1 | Coarse-grained Micro-F1 | Fine-grained Micro-F1 | Coarse-grained Macro-F1 | Fine-grained Macro-F1 | Score |
 | ------------------------------ | -------------------- | ------------- | -------------- | ----------------------- | --------------------- | ----------------------- | --------------------- |  --------------------- |
-| Baseline(Fine-tuned bert-base-chinese) |  /   | 37.24        | 19.51          | /                  | /                | /                   | /                |  28.38 |
+| Baseline(Fine-tuned bert-base-chinese) |  /   |   /     |     /    | /                  | 39.83                | /                   | 13.72                 |  / |
 | SIAT-UI-教育人工智能联合实验室 | sw.***@siat.ac.cn     | 48.84         | 25.68          | 58.06                   | 39.62                 | 36.25                   | 15.10                 | 37.26 |
 | Smartdot                       | tia***@smartdot.com | 57.64         | 38.04          | 63.87                   | 51.40                 | 48.23                   | 27.86                 | 47.84 |
 
