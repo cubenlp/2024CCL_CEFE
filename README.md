@@ -11,7 +11,7 @@
 | 4月14日 | 报名截止 |
 | 4月15日 | 发送训练数据给报名的参赛队伍 |
 | 4月19日 | 为平衡难度，对track 3测试集进行了微调整，已重新发布track 3测试集 |
-
+| 4月19日 | 开始公布[测试结果排行榜](https://github.com/cubenlp/2024CCL_CEFE/blob/main/Results.md) |
 # 0 最近Deadline：
 
 更多相关时间信息详见5.1赛程。
