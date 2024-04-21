@@ -247,9 +247,9 @@ $$ Score_{track1} = 0.5 * F_1^{Coarse-grained} + 0.5 * F_1^{Fine-grained}$$
 
 ## 4.2 赛道2：中小学作文病句改写
 
-&emsp;&emsp;我们采用EM(Exact Match)、Bart PPL、与input的编辑距离、BLEU-4、BERTScore以及 $F_{0.5}$ 作为评估指标(参考[MuCGEC](https://github.com/HillZhang1999/MuCGEC/tree/main/scorers/ChERRANT?spm=5176.12282016.0.0.7a106b1dPaf6TP))，最终实际排名将综合考虑上述所有指标得到AvgScore，在此基础之上对排名前5的队伍进行人工辅助评测，得到最终排名。
+&emsp;&emsp;我们采用EM(Exact Match)、Bert PPL、与input的编辑距离、BLEU-4、BERTScore以及 $F_{0.5}$ 作为评估指标(参考[MuCGEC](https://github.com/HillZhang1999/MuCGEC/tree/main/scorers/ChERRANT?spm=5176.12282016.0.0.7a106b1dPaf6TP))，最终实际排名将综合考虑上述所有指标得到AvgScore，在此基础之上对排名前5的队伍进行人工辅助评测，得到最终排名。
 AvgScore计算方式如下：
-    $$Score_{track2} = (EM + BLEU + F_{0.5} + BERTScore)/4 - Levenshtein - PPL_{BART} $$
+    $$Score_{track2} = (EM + BLEU + F_{0.5} + BERTScore)/4 - Levenshtein - PPL_{BERT} $$
 
 ## 4.3 赛道3：中小学作文流畅性评级
 
