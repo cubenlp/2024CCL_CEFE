@@ -255,6 +255,9 @@ AvgScore计算方式如下：
 
 &emsp;&emsp;采用准确率（Accuracy，Acc）、精确率（Precision, P）、召回率（Recall, R）、F1值（Macro F1）、Quadratic weighted Kappa（QWK）来评估中小学作文流畅性评级的分类效果：
     $$Score_{track3} = 0.5 * F_1 + 0.2 * QWK + 0.3 * Acc $$
+注：由于QWK取值范围为[-1,1]，我们首先将其归一化到[0,1]区间，然后再加权计算最终分数。
+
+
 # 5 评测赛程
 
 ## 5.1 赛程
