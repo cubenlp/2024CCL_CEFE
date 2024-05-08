@@ -421,4 +421,3 @@
 | SIAT-UI-教育人工智能联合实验室 | sw.***@siat.ac.cn | 44.25 | 40.38 | 38.39 | 38.41 | 0.0586 | 43.07 |
 | Smartdot | tia***@smartdot.com | 48.08 | 39.44 | 39.76 | 38.31 | 0.1653 | 45.23 |
 | ZUT-POLab | 202***@zut.edu.cn | 48.59 | 39.15 | 39.77 | 39.00 | 0.2159 | 46.23 |
-(llamafactory) (base) xinlin@map:~/raid/LLaMA-Factory/2024ccl$ 
