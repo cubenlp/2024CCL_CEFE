@@ -8,7 +8,7 @@
 
 | TeamName                       | TeamEmail            | Micro-F1 | Macro-F1 | Coarse-grained Micro-F1 | Fine-grained Micro-F1 | Coarse-grained Macro-F1 | Fine-grained Macro-F1 | Score |
 | ------------------------------ | -------------------- | ------------- | -------------- | ----------------------- | --------------------- | ----------------------- | --------------------- |  --------------------- |
-| Baseline(Fine-tuned bert-base-chinese) |  /   |   /     |     /    | /                  | 39.83                | /                   | 13.72                 |  / |
+| Baseline(Fine-tuned bert-base-chinese) |  /   |   46.36     |     22.88    | 52.90                  | 39.83                | 32.04                   | 13.72                 |  34.62 |
 
 ### track2
 
