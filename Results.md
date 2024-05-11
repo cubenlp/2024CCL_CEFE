@@ -20,7 +20,7 @@
 
 | TeamName | TeamEmail | ACC | Precision | Recall | F1 | QWK |AvgScore|
 |----------|----------|----------|----------|----------|----------|----------|----------|
-|  Baseline(Fine-tuned bert-base-chinese) | / | 48.85 | 45.81 | 46.06 | 44.97 |  0.2057 | 49.20 | 
+|  Baseline(Fine-tuned bert-base-chinese) | / | 45.52 | 41.42 | 39.15 | 38.57 |  0.1543 | 44.48 | 
 
 ## 2024-04-18
 
