@@ -543,7 +543,7 @@
 | GDUFS-CL | 41.09 |
 | 文思飞扬 | 24.87 |
 | DeakinAI | 16.77 |
-| zzunlp | 0 |
+| zzu_nlp | 0 |
 
 
 ## track3
