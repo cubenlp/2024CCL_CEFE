@@ -14,7 +14,7 @@
 
 | TeamName           | TeamEmail            | EM    | BERT PPL | Levenshtein | BLEU-4 | BERTscore | Precision | Recall | F0.5  | Score |
 | ------------------ | -------------------- | ----- | -------- | ----------- | ------ | --------- | --------- | ------ | ----- | ----- |
-|  Baseline(Fine-tuned bart-base-chinese) | / | 9.67 | 25.48 | 1.46 | 88.72 |  97.28 | 37.33 | 20.53 | 32.08 | 52.22 |
+|  Baseline(Fine-tuned bart-base-chinese) | / | 9.67 | 25.48 | 1.46 | 88.72 |  97.28 | 37.33 | 20.53 | 32.08 | 30.00 |
 
 ### track3
 
